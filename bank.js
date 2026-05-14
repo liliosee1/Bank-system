@@ -75,3 +75,32 @@ function processLoans(scores) {
     console.log("Index of low score:", firstLowIndex);
 }
 
+//  Fraud 
+
+function fraudCheck() {
+
+    let dailyTransactions = [1042, 8922, 3301, 5510, 7719, 9920];
+    let fraudID = 5510;
+
+    let exists = dailyTransactions.includes(fraudID);
+    console.log("Fraud exists:", exists);
+
+    if (exists) {
+        let index = dailyTransactions.indexOf(fraudID);
+        console.log("Fraud index:", index);
+    }
+
+    let lastThree = dailyTransactions.slice(-3);
+    console.log("Last 3 transactions:", lastThree);
+
+    let removed = dailyTransactions.indexOf(fraudID);
+
+    if (removed !== -1) {
+        dailyTransactions.splice(removed, 1);
+    }
+
+    dailyTransactions.forEach(id => {
+        console.log(`Transaction ${id} cleared.`);
+    });
+}
+
