@@ -129,4 +129,60 @@ function bankMerger() {
     console.log("Banner:", banner);
     console.log("Tellers:", tellers);
 }
+// Security system
+function validateBankPassword(password) {
+
+    let hasLength = password.length >= 8;
+
+    let noWord = !password.toLowerCase().includes("password");
+
+    let hasVowel = /[aeiou]/i.test(password);
+
+    if (hasLength && noWord && hasVowel) {
+        return "Access Granted";
+    }
+
+    return "Access Denied";
+}
+
+//  year
+function isLeapYear(year) {
+    return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+}
+
+function generateYearlyReport(startYear, endYear) {
+
+    for (let year = startYear; year <= endYear; year++) {
+
+        if (isLeapYear(year)) {
+            console.log(`Year ${year} is a special audit year.`);
+        }
+
+        if (year % 10 === 0) {
+            console.log(`${year} - Decade Anniversary`);
+        } else if (year % 5 === 0) {
+            console.log(`${year} - 5 Year Anniversary`);
+        }
+    }
+}
+
+atmTransaction("Deposit", 400);
+atmTransaction("Withdrawal",300);
+atmTransaction("Fee");
+atmTransaction("Undo");
+
+console.log("Loan System:");
+processLoans([650, 800, 500, 720, 410, 900]);
+
+console.log("Fraud System:");
+fraudCheck();
+
+console.log("Bank Merger:");
+bankMerger();
+
+console.log("Password Check:");
+console.log(validateBankPassword("Bank1234"));
+
+console.log("Yearly Report:");
+generateYearlyReport(2020, 2030);
 
