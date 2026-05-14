@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IronClad Bank System</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <div class="bg-white shadow-xl rounded-2xl p-8 w-96 text-center">
+
+        <h1 class="text-2xl font-bold mb-6 text-blue-600">
+            IronClad Bank
+        </h1>
+
+        <p class="mb-4 text-gray-700">
+            Click buttons to perform ATM actions
+        </p>
+
+        <!-- Buttons -->
+        <div class="space-y-3">
+
+            <button onclick="atmTransaction('Deposit', 200)"
+                class="w-full bg-green-500 text-white py-2 rounded-xl hover:bg-green-600">
+                Deposit $200
+            </button>
+
+            <button onclick="atmTransaction('Withdrawal', 100)"
+                class="w-full bg-red-500 text-white py-2 rounded-xl hover:bg-red-600">
+                Withdraw $100
+            </button>
+
+            <button onclick="atmTransaction('Fee')"
+                class="w-full bg-yellow-500 text-white py-2 rounded-xl hover:bg-yellow-600">
+                Apply Fee
+            </button>
+
+            <button onclick="atmTransaction('Undo')"
+                class="w-full bg-gray-700 text-white py-2 rounded-xl hover:bg-gray-800">
+                Undo Last Transaction
+            </button>
+
+        </div>
+
+        <p class="mt-6 text-sm text-gray-500">
+            Open Console (F12) to see balance & history
+        </p>
+
+    </div>
+
+    <!-- Your JavaScript file -->
+    <script src="bank.js"></script>
+
+</body>
+</html>
