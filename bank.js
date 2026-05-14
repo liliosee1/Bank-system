@@ -103,4 +103,30 @@ function fraudCheck() {
         console.log(`Transaction ${id} cleared.`);
     });
 }
+// Bank merger
+function bankMerger() {
+
+    let branchA = ["Alice", "Bob"];
+    let branchB = ["Charlie", "Diana"];
+
+    let allCustomers = branchA.concat(branchB);
+
+    let messyData = [["Eve", "Frank"], ["Grace"], ["Hank", "Ivy"]];
+
+    let flatData = messyData.flat();
+
+    let sorted = [...flatData].sort();
+
+    let reversed = [...sorted].reverse();
+
+    let banner = allCustomers.join(" - ");
+
+    let tellers = new Array(5).fill("Closed");
+
+    console.log("All customers:", allCustomers);
+    console.log("Flat:", flatData);
+    console.log("Sorted Z-A:", reversed);
+    console.log("Banner:", banner);
+    console.log("Tellers:", tellers);
+}
 
